@@ -1,4 +1,29 @@
 {
   "name": "scholarninja-node-client",
-  "main": "index.html"
+  "main": "index.html",
+  "dependencies": {
+    "crypto-js": "~3.1.2",
+    "peerjs": "~0.3.8",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "browserify": "~4.1.10",
+    "browserify-shim": "~3.5.0"
+  },
+  "browserify": {
+    "transform": ["browserify-shim"]
+  },
+  "browser": {
+    "peerjs": "./src/vendor/peer.js"
+  },
+  "browserify-shim": {
+    "peerjs": {
+      "exports": "Peer"
+    }
+  },
+  "scripts": {
+    "build": "npm run browserify && npm run zip",
+    "zip": "zip -r -X app.nw index.html node-client.js package.json scholarninja/ dist/",
+    "browserify": "browserify document.js -o dist/document.js && cp node-client.js dist/"
+  }
 }

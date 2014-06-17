@@ -1,0 +1,3 @@
+[submodule "scholarninja"]
+	path = scholarninja
+	url = git@github.com:jure/scholarninja.git
