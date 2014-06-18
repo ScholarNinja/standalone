@@ -11,3 +11,7 @@ Alpha software. May not work at all.
 
 This implementation also exposes an API, which you can query like this:
 `curl http://localhost:8999/?q=example`
+
+# Can it run headless?
+
+https://github.com/rogerwang/node-webkit/issues/769
